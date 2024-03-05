@@ -1,26 +1,6 @@
-server:
-  port: 8090
-
+#Se hiso modificaciones despues de agregar el contenido a mi msvc-config/configurations
 spring:
   application:
     name: msvc-student
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/studentDb
-    username: root
-    password: Dragon1234
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
   config:
     import: optional:configserver:http://localhost:8888 #Agregado, ya que el msvc-config no esta configurado
-
-#Para que se registre en Eureka
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/

@@ -1,27 +1,8 @@
-server:
-  port: 9090
-
+#Se hiso modificaciones despues de agregar el contenido a mi msvc-config/configurations
 spring:
   application:
     name: msvc-course
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/coursesDb
-    username: postgres
-    password: 1234
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
   config:
     import: optional:configserver:http://localhost:8888 #Agregado, ya que el msvc-config no esta configurado
 
-#Para que se registre en Eureka
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 
